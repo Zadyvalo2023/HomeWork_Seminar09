@@ -1,0 +1,63 @@
+﻿// Задача 66: Задайте значения M и N. Напишите программу, 
+// которая найдёт сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+
+using System;
+ class Program
+{
+    static void Main()
+    {
+        int M = 1;
+        int N = 15;
+        int sum = RecursiveSum(M, N);
+        Console.WriteLine("Сумма натуральных элементов в промежутке от {0} до {1} равна {2}", M, N, sum);
+    }
+     static int RecursiveSum(int start, int end)
+    {
+        if (start == end)
+            return start;
+        else
+            return start + RecursiveSum(start + 1, end);
+    }
+}
+
+//==================== Version 2
+
+// using System;
+//  class Program
+// {
+//     static void Main()
+//     {
+//         int M = 4;
+//         int N = 8;
+//         int sum = RecursiveSum(M, N);
+//         Console.WriteLine("Сумма натуральных элементов в промежутке от {0} до {1} равна {2}", M, N, sum);
+//     }
+//      static int RecursiveSum(int start, int end)
+//     {
+//         if (start == end)
+//             return start;
+//         else
+//             return start + RecursiveSum(start + 1, end);
+//     }
+// }
+//====================== Version 3
+// using System;
+//  class Program
+// {
+//     static void Main()
+//     {
+//         int M = 1;
+//         int N = 15;
+//         int sum = CalculateSum(M, N);
+//         Console.WriteLine("Сумма натуральных элементов в промежутке от {0} до {1} равна {2}", M, N, sum);
+//     }
+//      static int CalculateSum(int start, int end)
+//     {
+//         if (start == end)
+//             return start;
+//         else
+//             return start + CalculateSum(start + 1, end);
+//     }
+// }
